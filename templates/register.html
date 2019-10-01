@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'semantic/node_modules/semantic-ui/dist/semantic.min.css' %}">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="{% static 'semantic/node_modules/semantic-ui/dist/semantic.min.js' %}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            background-color: #DADADA;
+            margin: 0px;
+        }
+        .container{
+            margin: 0px;
+            padding: 0px;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translateX(-50%) translateY(-50%);
+            min-width: 500 px;
+        }
+    </style>   
+    <title>Form</title>
+</head>
+<body>
+    <div class = "container" style="width: 380px; height: 250px;" >
+        <!--<div class="ui middle aligned center aligned grid">-->
+            <div class="ui stacked segment"> 
+                <form class="ui large form" action="register" method="POST">
+                    {% csrf_token %}
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="username" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password1" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password2" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <button class="ui large fluid teal button" type="submit">Create Account</button>
+                </form>
+            </div>
+            <div>
+            {% for message in messages %}
+            <h3>
+                {{message}}
+            </h3>
+            {% endfor %}
+            </div>
+    </div>
+</body>
+</html>

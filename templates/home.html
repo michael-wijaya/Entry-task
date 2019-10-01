@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/" target="_blank">Home</a></li>
+        {% if user.is_authenticated  %}
+        <li>Hello, {{user.username}}</li>
+        <li><a href="accounts/logout">Logout</a></li>									
+        {% else %}
+        <li><a href="accounts/login">Login</a></li>
+        <li><a href="accounts/register">Register</a></li>
+        {% endif %}
+    </ul>
+</body>
+</html>
