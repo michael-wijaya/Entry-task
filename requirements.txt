@@ -18,7 +18,7 @@ MarkupSafe==1.0
 marshmallow==2.16.1
 marshmallow-sqlalchemy==0.14.1
 mysqlclient==1.4.4
-numpy==1.17.2
+numpy==1.22.0
 pandas==0.25.1
 python-dateutil==2.8.0
 pytrends==4.6.0
